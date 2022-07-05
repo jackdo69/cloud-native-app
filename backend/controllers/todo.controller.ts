@@ -15,10 +15,7 @@ export interface ITodoController {
 
 @injectable()
 export class TodoController implements ITodoController {
-  constructor(
-    @inject(ContainerKeys.ILoggerService) private logger: ILoggerService,
-    @inject(ContainerKeys.ITodoService) private service: ITodoService
-  ) {}
+  constructor(@inject(ContainerKeys.ITodoService) private service: ITodoService) {}
 
   async createTodo(params: APIGatewayEvent): Promise<APIGatewayProxyResult> {
     try {
