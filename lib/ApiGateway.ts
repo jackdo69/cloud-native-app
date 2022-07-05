@@ -16,11 +16,11 @@ export class ApiGateway extends RestApi {
   constructor(scope: Construct) {
     const ID = "ApiGateway";
     super(scope, ID, {
-      restApiName: "cloud-native-app",
+      restApiName: "cloud-native_api-gateway",
       deployOptions: {
         accessLogDestination: new LogGroupLogDestination(
           new LogGroup(scope, "ApiLogGroup", {
-            logGroupName: "api_gateway",
+            logGroupName: "cloud-native_api-gateway_log-group",
             retention: RetentionDays.ONE_DAY,
             removalPolicy: RemovalPolicy.DESTROY
           })
